@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
-import 'package:wallet_app/CardScreen.dart';
-import 'package:wallet_app/HomeScreen.dart';
-
+import 'View_Pages/Home_Screen/Home_page/CardScreen.dart';
+import 'View_Pages/Home_Screen/Home_page/HomeScreen.dart';
+import 'View_Pages/Home_Screen/Demo_Pan/panDetails_page.dart';
 void main() => runApp(MyApp());
 
 class MyApp extends StatelessWidget {
@@ -11,15 +11,6 @@ class MyApp extends StatelessWidget {
     return MaterialApp(
       title: 'Flutter Demo',
       theme: ThemeData(
-        // This is the theme of your application.
-        //
-        // Try running your application with "flutter run". You'll see the
-        // application has a blue toolbar. Then, without quitting the app, try
-        // changing the primarySwatch below to Colors.green and then invoke
-        // "hot reload" (press "r" in the console where you ran "flutter run",
-        // or simply save your changes to "hot reload" in a Flutter IDE).
-        // Notice that the counter didn't reset back to zero; the application
-        // is not restarted.
         primarySwatch: Colors.blue,
       ),
       home: WalletApp(),
@@ -27,7 +18,6 @@ class MyApp extends StatelessWidget {
     );
   }
 }
-
 class WalletApp extends StatefulWidget {
   @override
   _WalletAppState createState() => _WalletAppState();
@@ -66,7 +56,9 @@ class _WalletAppState extends State<WalletApp> {
         iconSize: 30,
       ),
       floatingActionButton: FloatingActionButton(
-        onPressed: (){},
+        onPressed: (){
+          Navigator.push(context, MaterialPageRoute(builder: (_) => panFetch()));
+        },
         elevation: 0,
         child: Icon(Icons.add),
       ),
